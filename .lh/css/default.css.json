@@ -1,0 +1,70 @@
+{
+    "sourceFile": "css/default.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1635226067541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635226077109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-.wrap { margin: 20px auto; width: 80%; }\n\\ No newline at end of file\n+.wrap { margin: 50px auto; width: 80%; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226100458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-.wrap { margin: 50px auto; width: 80%; }\n\\ No newline at end of file\n+.wrap { margin: 50px auto; width: 80%; }\r\n+.wrap h2 { font-size: 2.5rem; font-weight: 600; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226112585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n-.wrap h2 { font-size: 2.5rem; font-weight: 600; }\n\\ No newline at end of file\n+.wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n+.wrap ul { margin: 30px 0 0; }\r\n"
+                },
+                {
+                    "date": 1635226181268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 30px 0 0; }\r\n+.wrap li { list-style: circle; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226191969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 30px 0 0; }\r\n-.wrap li { list-style: circle; }\n\\ No newline at end of file\n+.wrap li { list-style: circle; margin: 20px 0 0; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226207088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 30px 0 0; }\r\n-.wrap li { list-style: circle; margin: 20px 0 0; }\n\\ No newline at end of file\n+.wrap li { list-style: circle; margin: 20px 0 0; }\r\n+.wrap li:first-child { margin: 0; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226212578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n-.wrap ul { margin: 30px 0 0; }\r\n+.wrap ul { margin: 40px 0 0; }\r\n .wrap li { list-style: circle; margin: 20px 0 0; }\r\n .wrap li:first-child { margin: 0; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226253042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n-.wrap li { list-style: circle; margin: 20px 0 0; }\r\n-.wrap li:first-child { margin: 0; }\n\\ No newline at end of file\n+.wrap li { list-style: circle; margin: 20px 0 0 30px; }\r\n+.wrap li:first-child { margin: 0 0 0 30px; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226278590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n .wrap li { list-style: circle; margin: 20px 0 0 30px; }\r\n-.wrap li:first-child { margin: 0 0 0 30px; }\n\\ No newline at end of file\n+.wrap li:first-child { margin: 0 0 0 30px; }\r\n+.wrap li a { color: blue; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226288485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n .wrap li { list-style: circle; margin: 20px 0 0 30px; }\r\n .wrap li:first-child { margin: 0 0 0 30px; }\r\n-.wrap li a { color: blue; }\n\\ No newline at end of file\n+.wrap li a { color: blue; font-weight: 600; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226301757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .wrap { margin: 50px auto; width: 80%; }\r\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n-.wrap li { list-style: circle; margin: 20px 0 0 30px; }\r\n+.wrap li { list-style: circle; margin: 20px 0 0 30px; font-size: 1.5rem; }\r\n .wrap li:first-child { margin: 0 0 0 30px; }\r\n .wrap li a { color: blue; font-weight: 600; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226330092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n .wrap li { list-style: circle; margin: 20px 0 0 30px; font-size: 1.5rem; }\r\n .wrap li:first-child { margin: 0 0 0 30px; }\r\n-.wrap li a { color: blue; font-weight: 600; }\n\\ No newline at end of file\n+.wrap li a { color: blue; font-weight: 600; }\r\n+.wrap li a:hover { color: yellow; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635226664782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n .wrap h2 { font-size: 2.5rem; font-weight: 600; }\r\n .wrap ul { margin: 40px 0 0; }\r\n .wrap li { list-style: circle; margin: 20px 0 0 30px; font-size: 1.5rem; }\r\n .wrap li:first-child { margin: 0 0 0 30px; }\r\n-.wrap li a { color: blue; font-weight: 600; }\r\n-.wrap li a:hover { color: yellow; }\n\\ No newline at end of file\n+.wrap li a { color: #1e65a7; font-weight: 600; }\r\n+.wrap li a:hover { color: #e0ab2b; }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1635226067541,
+            "name": "Commit-0",
+            "content": ".wrap { margin: 20px auto; width: 80%; }"
+        }
+    ]
+}

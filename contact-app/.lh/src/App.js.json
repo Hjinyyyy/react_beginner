@@ -1,0 +1,154 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 34,
+            "patches": [
+                {
+                    "date": 1634884683798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634884696031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import PhoneForm from './components/PhoneForm';\n \n function App() {\n   return (\n-    <div className=\"App\">\n+    <div>\n       <PhoneForm />\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1634884844719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n-import logo from './logo.svg';\n-import './App.css';\n+import React, { Component } from 'react';\n import PhoneForm from './components/PhoneForm';\n \n-function App() {\n-  return (\n-    <div>\n-      <PhoneForm />\n-    </div>\n-  );\n+class App extends Component {\n+  render() {\n+    return (\n+      <div>\n+        <PhoneForm />\n+      </div>\n+    )\n+  }\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1634888432208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React, { Component } from 'react';\n import PhoneForm from './components/PhoneForm';\n \n class App extends Component {\n+\n+  handleCreate = (data) => {\n+    console.log(data);\n+  }\n   render() {\n     return (\n       <div>\n         <PhoneForm />\n"
+                },
+                {
+                    "date": 1634888460176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,13 @@\n \n   handleCreate = (data) => {\n     console.log(data);\n   }\n+\n   render() {\n     return (\n       <div>\n-        <PhoneForm />\n+        <PhoneForm onCreate={this.handleCreate}/>\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1634888825780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,13 @@\n import PhoneForm from './components/PhoneForm';\n \n class App extends Component {\n \n+  state = {\n+    information: [],\n+\n+  }\n+\n   handleCreate = (data) => {\n     console.log(data);\n   }\n \n"
+                },
+                {
+                    "date": 1634888933844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,15 @@\n class App extends Component {\n \n   state = {\n     information: [],\n-\n   }\n \n   handleCreate = (data) => {\n     console.log(data);\n+    this.setState({\n+      information: this.state.information.concat(data),\n+    });\n   }\n \n   render() {\n     return (\n"
+                },
+                {
+                    "date": 1634888939663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n   handleCreate = (data) => {\n     console.log(data);\n     this.setState({\n-      information: this.state.information.concat(data),\n+      information: this.state.information.concat(data)\n     });\n   }\n \n   render() {\n"
+                },
+                {
+                    "date": 1634888983691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n   render() {\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate}/>\n+        {JSON.stringify(this.state.information)}\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1634889021181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   }\n \n   handleCreate = (data) => {\n     console.log(data);\n+    const { information } = this.state;\n     this.setState({\n       information: this.state.information.concat(data)\n     });\n   }\n"
+                },
+                {
+                    "date": 1634889048002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n   handleCreate = (data) => {\n     console.log(data);\n     const { information } = this.state;\n     this.setState({\n-      information: this.state.information.concat(data)\n+      // information: this.state.information.concat(data)\n+      information: information.concat(data)\n     });\n   }\n \n   render() {\n"
+                },
+                {
+                    "date": 1634889288447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import PhoneForm from './components/PhoneForm';\n \n class App extends Component {\n \n+  id = 0;\n+\n   state = {\n     information: [],\n   }\n \n@@ -11,9 +13,13 @@\n     console.log(data);\n     const { information } = this.state;\n     this.setState({\n       // information: this.state.information.concat(data)\n-      information: information.concat(data)\n+      // information: information.concat(data)\n+      information: information.concat({\n+        ...data,\n+        id: this.id++\n+      })\n     });\n   }\n \n   render() {\n"
+                },
+                {
+                    "date": 1634890181173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React, { Component } from 'react';\n import PhoneForm from './components/PhoneForm';\n+import PhoneInfoList from './components/PhoneInfoList';\n \n class App extends Component {\n \n   id = 0;\n@@ -25,9 +26,10 @@\n   render() {\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate}/>\n-        {JSON.stringify(this.state.information)}\n+        {/* {JSON.stringify(this.state.information)} */}\n+        <PhoneInfoList />\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1634890382493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n \n   render() {\n     return (\n       <div>\n-        <PhoneForm onCreate={this.handleCreate}/>\n+        <PhoneForm onCreate={this.handleCreate} />\n         {/* {JSON.stringify(this.state.information)} */}\n-        <PhoneInfoList />\n+        <PhoneInfoList data={information} />\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1634890396042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate} />\n         {/* {JSON.stringify(this.state.information)} */}\n-        <PhoneInfoList data={information} />\n+        <PhoneInfoList data={this.state.information} />\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1634893585315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,12 @@\n       })\n     });\n   }\n \n+  handleRemove = (id) => {\n+    const { information } = this.state;\n+  }\n+\n   render() {\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate} />\n"
+                },
+                {
+                    "date": 1634893649239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,11 @@\n   }\n \n   handleRemove = (id) => {\n     const { information } = this.state;\n+    this.setState({\n+      information: information.filter( info => info.id !== id )\n+    });\n   }\n \n   render() {\n     return (\n"
+                },
+                {
+                    "date": 1634893690603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,12 @@\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate} />\n         {/* {JSON.stringify(this.state.information)} */}\n-        <PhoneInfoList data={this.state.information} />\n+        <PhoneInfoList\n+          data={this.state.information}\n+          onRemove={this.handleRemove}\n+        />\n       </div>\n     )\n   }\n }\n"
+                },
+                {
+                    "date": 1635148050458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,25 @@\n       information: information.filter( info => info.id !== id )\n     });\n   }\n \n+  handleUpdate = (id, data) => {\n+    const { information } = this.state;\n+    this.setState({\n+      information: information.map(\n+        info => {\n+          if (info.id === id) {\n+            return {\n+              id,\n+              ...data,\n+            };\n+          }\n+          return info;\n+        }\n+      )\n+    });\n+  }\n+\n   render() {\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate} />\n"
+                },
+                {
+                    "date": 1635148091994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n         {/* {JSON.stringify(this.state.information)} */}\n         <PhoneInfoList\n           data={this.state.information}\n           onRemove={this.handleRemove}\n+          onUpdate={this.handleUpdate}\n         />\n       </div>\n     )\n   }\n"
+                },
+                {
+                    "date": 1635150595750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,12 @@\n \n   id = 0;\n \n   state = {\n-    information: [],\n+    information: [\n+      name: '홍길동',\n+      phone: '010-0000-0001'\n+    ],\n   }\n \n   handleCreate = (data) => {\n     console.log(data);\n"
+                },
+                {
+                    "date": 1635150620117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,12 @@\n   id = 0;\n \n   state = {\n     information: [\n-      name: '홍길동',\n-      phone: '010-0000-0001'\n+      {\n+        name: '홍길동',\n+        phone: '010-0000-0001'\n+      }\n     ],\n   }\n \n   handleCreate = (data) => {\n"
+                },
+                {
+                    "date": 1635150629632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n   state = {\n     information: [\n       {\n+        id: 0,\n         name: '홍길동',\n         phone: '010-0000-0001'\n       }\n     ],\n"
+                },
+                {
+                    "date": 1635150656302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,18 @@\n       {\n         id: 0,\n         name: '홍길동',\n         phone: '010-0000-0001'\n+      },\n+      {\n+        id: 1,\n+        name: '홍길동',\n+        phone: '010-0000-0002'\n+      },\n+      {\n+        id: 2,\n+        name: '홍길동',\n+        phone: '010-0000-0003'\n       }\n     ],\n   }\n \n"
+                },
+                {
+                    "date": 1635150678514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,14 @@\n         phone: '010-0000-0001'\n       },\n       {\n         id: 1,\n-        name: '홍길동',\n+        name: '김민준',\n         phone: '010-0000-0002'\n       },\n       {\n         id: 2,\n-        name: '홍길동',\n+        name: '벨로퍼트',\n         phone: '010-0000-0003'\n       }\n     ],\n   }\n"
+                },
+                {
+                    "date": 1635150692920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import PhoneInfoList from './components/PhoneInfoList';\n \n class App extends Component {\n \n-  id = 0;\n+  id = 3;\n \n   state = {\n     information: [\n       {\n"
+                },
+                {
+                    "date": 1635153106541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n         name: '벨로퍼트',\n         phone: '010-0000-0003'\n       }\n     ],\n+    keyword: '',\n   }\n \n   handleCreate = (data) => {\n     console.log(data);\n"
+                },
+                {
+                    "date": 1635153156214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,14 @@\n     ],\n     keyword: '',\n   }\n \n+  handleChange = (e) => {\n+    this.setState({\n+      \n+    });\n+  }\n+\n   handleCreate = (data) => {\n     console.log(data);\n     const { information } = this.state;\n     this.setState({\n"
+                },
+                {
+                    "date": 1635153176443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   }\n \n   handleChange = (e) => {\n     this.setState({\n-      \n+      keyword: e.target.value,\n     });\n   }\n \n   handleCreate = (data) => {\n"
+                },
+                {
+                    "date": 1635153226441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,13 @@\n     return (\n       <div>\n         <PhoneForm onCreate={this.handleCreate} />\n         {/* {JSON.stringify(this.state.information)} */}\n+        <p>\n+        <input \n+\n+        />\n+        </p>        \n         <PhoneInfoList\n           data={this.state.information}\n           onRemove={this.handleRemove}\n           onUpdate={this.handleUpdate}\n"
+                },
+                {
+                    "date": 1635153247364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n         <PhoneForm onCreate={this.handleCreate} />\n         {/* {JSON.stringify(this.state.information)} */}\n         <p>\n         <input \n-\n+          value={this.state.keyword}\n         />\n         </p>        \n         <PhoneInfoList\n           data={this.state.information}\n"
+                },
+                {
+                    "date": 1635153269547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n         {/* {JSON.stringify(this.state.information)} */}\n         <p>\n         <input \n           value={this.state.keyword}\n+          onChange={this.handleChange}\n         />\n         </p>        \n         <PhoneInfoList\n           data={this.state.information}\n"
+                },
+                {
+                    "date": 1635153289871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,9 @@\n         <p>\n         <input \n           value={this.state.keyword}\n           onChange={this.handleChange}\n+          placeholder=\"검색...\"\n         />\n         </p>        \n         <PhoneInfoList\n           data={this.state.information}\n"
+                },
+                {
+                    "date": 1635153341792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,11 @@\n           placeholder=\"검색...\"\n         />\n         </p>        \n         <PhoneInfoList\n-          data={this.state.information}\n+          data={this.state.information.filter(\n+            info => info.name.indexOf(this.state.keyword)\n+          )}\n           onRemove={this.handleRemove}\n           onUpdate={this.handleUpdate}\n         />\n       </div>\n"
+                },
+                {
+                    "date": 1635153353711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         />\n         </p>        \n         <PhoneInfoList\n           data={this.state.information.filter(\n-            info => info.name.indexOf(this.state.keyword)\n+            info => info.name.indexOf(this.state.keyword) > -1\n           )}\n           onRemove={this.handleRemove}\n           onUpdate={this.handleUpdate}\n         />\n"
+                }
+            ],
+            "date": 1634884683798,
+            "name": "Commit-0",
+            "content": "import logo from './logo.svg';\nimport './App.css';\nimport PhoneForm from './components/PhoneForm';\n\nfunction App() {\n  return (\n    <div className=\"App\">\n      <PhoneForm />\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}

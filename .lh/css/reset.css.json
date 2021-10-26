@@ -1,0 +1,18 @@
+{
+    "sourceFile": "css/reset.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1635225764498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1635225764498,
+            "name": "Commit-0",
+            "content": "@charset \"utf-8\";\r\n\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed, \r\nfigure, figcaption, footer, header, hgroup, \r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    font-size: 100%;\r\n    font: inherit;\r\n    -webkit-tap-highlight-color:rgba(255,255,255,0);\r\n    -moz-tap-highlight-color:rgba(255,255,255,0);\r\n    box-sizing:border-box;\r\n}\r\nbody {\r\n    line-height: 1;\r\n    -webkit-overflow-scrolling:touch;\r\n}\r\narticle, aside, details, figcaption, figure, footer, header, menu, nav, section {\r\n    display: block;\r\n}\r\nhtml {\r\n    font-family:sans-serif;\r\n    -ms-text-size-adjust:100%; /* ie */\r\n    -webkit-text-size-adjust:100%; /* IOS */\r\n    -moz-text-size-adjust:100%;\r\n    text-size-adjust:100%;\r\n}\r\nol, ul {\r\n    list-style: none;\r\n}\r\nblockquote:before, blockquote:after, q:before, q:after {\r\n    content: '';\r\n    content: none;\r\n}\r\ntable {\r\n    border-collapse: collapse;\r\n    border-spacing: 0;\r\n}\r\nimg {\r\n    vertical-align:middle;\r\n    border:0;\r\n}\r\na {\r\n    font-family:inherit;\r\n    color:inherit;\r\n    text-decoration:none;\r\n}\r\n.clearfix:after {\r\n    content:'';\r\n    clear:both;\r\n    display:block;\r\n}\r\nbutton, input, optgroup, select, textarea {\r\n    color: inherit;\r\n    font: inherit;\r\n    margin: 0;\r\n}\r\ntextarea, select  {\r\n    appearance:none; \r\n    -webkit-appearance:none; \r\n    -moz-appearance:none; \r\n    border-radius:0; \r\n    -webkit-border-radius:0; \r\n    box-sizing:border-box; \r\n    -webkit-box-sizing:border-box;\r\n}\r\ninput {\r\n    line-height:normal;\r\n    border-radius:0; \r\n    -webkit-border-radius:0; \r\n    box-sizing:border-box; \r\n    -webkit-box-sizing:border-box;\r\n}\r\ninput[type=\"text\"], input[type=\"password\"], input[type=\"tel\"], input[type=\"url\"], input[type=\"email\"], input[type=\"number\"] {\r\n    appearance:none; \r\n    -webkit-appearance:none; \r\n    -moz-appearance:none; \r\n    border-radius:0; \r\n    -webkit-border-radius:0; \r\n}\r\ninput[type=\"checkbox\"], input[type=\"radio\"] { \r\n    box-sizing: border-box; \r\n    padding: 0;\r\n} \r\nbutton, input[type=\"button\"] {\r\n    background:none;\r\n    border:none;\r\n    padding:0;\r\n    margin:0;\r\n    appearance:none; \r\n    -webkit-appearance:none; \r\n    -moz-appearance:none; \r\n    border-radius:0; \r\n    -webkit-border-radius:0; \r\n    cursor:pointer;\r\n}\r\nbutton[disabled], input[disabled] {\r\n    cursor: default;\r\n}\r\n"
+        }
+    ]
+}

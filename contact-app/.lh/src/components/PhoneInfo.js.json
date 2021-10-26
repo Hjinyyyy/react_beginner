@@ -1,0 +1,218 @@
+{
+    "sourceFile": "src/components/PhoneInfo.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 50,
+            "patches": [
+                {
+                    "date": 1634889796245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634889922337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,18 @@\n class PhoneInfo extends Component {\r\n     render() {\r\n         const { name, phone, id } = this.props.info;\r\n         \r\n+        const style = {\r\n+            border: '1px solid black',\r\n+            padding: '8px 12px',\r\n+            margin: '10px 0',\r\n+        }\r\n+\r\n         return (\r\n             <div>\r\n-                \r\n+                <p><b>{name}</b></p>\r\n+                <p>{phone}</p>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1634889945668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,12 @@\n         const style = {\r\n             border: '1px solid black',\r\n             padding: '8px 12px',\r\n             margin: '10px 0',\r\n-        }\r\n+        };\r\n \r\n         return (\r\n-            <div>\r\n+            <div style={style}>\r\n                 <p><b>{name}</b></p>\r\n                 <p>{phone}</p>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634890421516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         \r\n         const style = {\r\n             border: '1px solid black',\r\n             padding: '8px 12px',\r\n-            margin: '10px 0',\r\n+            margin: '10px',\r\n         };\r\n \r\n         return (\r\n             <div style={style}>\r\n"
+                },
+                {
+                    "date": 1634893970354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneInfo extends Component {\r\n+    handleRemove = () => {\r\n+        const { info, onRemove } = this.props;\r\n+    }\r\n+\r\n     render() {\r\n         const { name, phone, id } = this.props.info;\r\n         \r\n         const style = {\r\n"
+                },
+                {
+                    "date": 1634893989183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \r\n class PhoneInfo extends Component {\r\n     handleRemove = () => {\r\n         const { info, onRemove } = this.props;\r\n+        onRemove(info.id);\r\n     }\r\n \r\n     render() {\r\n         const { name, phone, id } = this.props.info;\r\n"
+                },
+                {
+                    "date": 1634894011548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         return (\r\n             <div style={style}>\r\n                 <p><b>{name}</b></p>\r\n                 <p>{phone}</p>\r\n+                <button>삭제</button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1634894031926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         return (\r\n             <div style={style}>\r\n                 <p><b>{name}</b></p>\r\n                 <p>{phone}</p>\r\n-                <button>삭제</button>\r\n+                <button onClick={this.handleRemove}>삭제</button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1634894040314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         onRemove(info.id);\r\n     }\r\n \r\n     render() {\r\n-        const { name, phone, id } = this.props.info;\r\n+        const { name, phone } = this.props.info;\r\n         \r\n         const style = {\r\n             border: '1px solid black',\r\n             padding: '8px 12px',\r\n"
+                },
+                {
+                    "date": 1635135604064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         };\r\n \r\n         return (\r\n             <div style={style}>\r\n-                <p><b>{name}</b></p>\r\n-                <p>{phone}</p>\r\n+                <p><b>{name}</b>\r\n+                <span>{phone}</span></p>\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1635135622011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         };\r\n \r\n         return (\r\n             <div style={style}>\r\n-                <p><b>{name}</b>\r\n+                <p><b>{name}</b> &nbsp;\r\n                 <span>{phone}</span></p>\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1635135629940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         };\r\n \r\n         return (\r\n             <div style={style}>\r\n-                <p><b>{name}</b> &nbsp;\r\n+                <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p>\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1635148175330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,13 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneInfo extends Component {\r\n+\r\n+    state = {\r\n+        editing: false,\r\n+        \r\n+    }\r\n+\r\n     handleRemove = () => {\r\n         const { info, onRemove } = this.props;\r\n         onRemove(info.id);\r\n     }\r\n"
+                },
+                {
+                    "date": 1635148195950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n class PhoneInfo extends Component {\r\n \r\n     state = {\r\n         editing: false,\r\n-        \r\n+\r\n     }\r\n \r\n     handleRemove = () => {\r\n         const { info, onRemove } = this.props;\r\n@@ -25,8 +25,9 @@\n             <div style={style}>\r\n                 <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p>\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n+                <button onClick={this.handleUpdate}>수정</button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1635148279931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,14 @@\n         editing: false,\r\n \r\n     }\r\n \r\n+    handleToggleEdit = () => {\r\n+        this.setState({\r\n+            editing: !this.state.editing\r\n+        });\r\n+    }\r\n+\r\n     handleRemove = () => {\r\n         const { info, onRemove } = this.props;\r\n         onRemove(info.id);\r\n     }\r\n"
+                },
+                {
+                    "date": 1635148303121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     }\r\n \r\n     handleToggleEdit = () => {\r\n         this.setState({\r\n-            editing: !this.state.editing\r\n+            editing: !this.state.editing,\r\n         });\r\n     }\r\n \r\n     handleRemove = () => {\r\n@@ -31,9 +31,9 @@\n             <div style={style}>\r\n                 <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p>\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n-                <button onClick={this.handleUpdate}>수정</button>\r\n+                <button>수정</button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1635148326112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n     }\r\n \r\n     render() {\r\n         const { name, phone } = this.props.info;\r\n+        const { editing } = this.state;\r\n         \r\n         const style = {\r\n             border: '1px solid black',\r\n             padding: '8px 12px',\r\n"
+                },
+                {
+                    "date": 1635148339322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { Component } from 'react';\r\n+import React, { Component, Fragment } from 'react';\r\n \r\n class PhoneInfo extends Component {\r\n \r\n     state = {\r\n"
+                },
+                {
+                    "date": 1635148443669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,20 @@\n         };\r\n \r\n         return (\r\n             <div style={style}>\r\n-                <p><b>{name}</b>&nbsp;\r\n-                <span>{phone}</span></p>\r\n+                {/* <p><b>{name}</b>&nbsp;\r\n+                <span>{phone}</span></p> */}\r\n+                {\r\n+                    editing ? (\r\n+\r\n+                    ) : (\r\n+                        <Fragment>\r\n+                        <p><b>{name}</b>&nbsp;\r\n+                        <span>{phone}</span></p>\r\n+                        </Fragment>\r\n+                    )\r\n+                }\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n                 <button>수정</button>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1635148471912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,13 +33,13 @@\n                 {/* <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n-\r\n+                        <input />\r\n                     ) : (\r\n                         <Fragment>\r\n-                        <p><b>{name}</b>&nbsp;\r\n-                        <span>{phone}</span></p>\r\n+                            <p><b>{name}</b>&nbsp;\r\n+                            <span>{phone}</span></p>\r\n                         </Fragment>\r\n                     )\r\n                 }\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n"
+                },
+                {
+                    "date": 1635148493826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,12 @@\n                 {/* <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n-                        <input />\r\n+                        <Fragment>\r\n+                            <input />\r\n+                            <input />\r\n+                        </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n                             <p><b>{name}</b>&nbsp;\r\n                             <span>{phone}</span></p>\r\n"
+                },
+                {
+                    "date": 1635148535489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n                         </Fragment>\r\n                     )\r\n                 }\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n-                <button>수정</button>\r\n+                <button onClick={this.handleToggleEdit}>수정</button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1635148577016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n                         <Fragment>\r\n-                            <input />\r\n-                            <input />\r\n+                            <p><input /></p>\r\n+                            <p><input /></p>\r\n                         </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n                             <p><b>{name}</b>&nbsp;\r\n"
+                },
+                {
+                    "date": 1635148631765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,16 @@\n                         </Fragment>\r\n                     )\r\n                 }\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n-                <button onClick={this.handleToggleEdit}>수정</button>\r\n+                <button onClick={this.handleToggleEdit}>\r\n+                    { editing ? (\r\n+\r\n+                        ) : (\r\n+                            \r\n+                        )\r\n+                    }\r\n+                </button>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1635148652044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,14 +46,9 @@\n                     )\r\n                 }\r\n                 <button onClick={this.handleRemove}>삭제</button>\r\n                 <button onClick={this.handleToggleEdit}>\r\n-                    { editing ? (\r\n-\r\n-                        ) : (\r\n-                            \r\n-                        )\r\n-                    }\r\n+                    { editing ? '적용' : '수정'}\r\n                 </button>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149157464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n class PhoneInfo extends Component {\r\n \r\n     state = {\r\n         editing: false,\r\n-\r\n+        name: '',\r\n+        phone: '',\r\n     }\r\n \r\n     handleToggleEdit = () => {\r\n         this.setState({\r\n"
+                },
+                {
+                    "date": 1635149232139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n     state = {\r\n         editing: false,\r\n         name: '',\r\n-        phone: '',\r\n+        phone: ''\r\n     }\r\n \r\n     handleToggleEdit = () => {\r\n         this.setState({\r\n@@ -18,8 +18,14 @@\n         const { info, onRemove } = this.props;\r\n         onRemove(info.id);\r\n     }\r\n \r\n+    handleChange = (e) => {\r\n+        this.setState({\r\n+            [e.target.name]: e.target.value\r\n+        })\r\n+    }\r\n+\r\n     render() {\r\n         const { name, phone } = this.props.info;\r\n         const { editing } = this.state;\r\n         \r\n"
+                },
+                {
+                    "date": 1635149258435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,10 @@\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n                         <Fragment>\r\n+                            <p><input onChange={this.handleChange}/></p>\r\n                             <p><input /></p>\r\n-                            <p><input /></p>\r\n                         </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n                             <p><b>{name}</b>&nbsp;\r\n"
+                },
+                {
+                    "date": 1635149265705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n                         <Fragment>\r\n-                            <p><input onChange={this.handleChange}/></p>\r\n+                            <p><input onChange={this.handleChange} /></p>\r\n                             <p><input /></p>\r\n                         </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n"
+                },
+                {
+                    "date": 1635149277256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                 {\r\n                     editing ? (\r\n                         <Fragment>\r\n                             <p><input onChange={this.handleChange} /></p>\r\n-                            <p><input /></p>\r\n+                            <p><input onChange={this.handleChange} /></p>\r\n                         </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n                             <p><b>{name}</b>&nbsp;\r\n"
+                },
+                {
+                    "date": 1635149363789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,19 @@\n                 <span>{phone}</span></p> */}\r\n                 {\r\n                     editing ? (\r\n                         <Fragment>\r\n-                            <p><input onChange={this.handleChange} /></p>\r\n-                            <p><input onChange={this.handleChange} /></p>\r\n+                            <p>\r\n+                                <input\r\n+                                    onChange={this.handleChange}\r\n+                                    value={}\r\n+                                />\r\n+                            </p>\r\n+                            <p>\r\n+                                <input\r\n+                                    onChange={this.handleChange}\r\n+                                />\r\n+                            </p>\r\n                         </Fragment>\r\n                     ) : (\r\n                         <Fragment>\r\n                             <p><b>{name}</b>&nbsp;\r\n"
+                },
+                {
+                    "date": 1635149381286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                         <Fragment>\r\n                             <p>\r\n                                 <input\r\n                                     onChange={this.handleChange}\r\n-                                    value={}\r\n+                                    value={this.state.name}\r\n                                 />\r\n                             </p>\r\n                             <p>\r\n                                 <input\r\n"
+                },
+                {
+                    "date": 1635149394511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n                             </p>\r\n                             <p>\r\n                                 <input\r\n                                     onChange={this.handleChange}\r\n+                                    value={this.state.phone}\r\n                                 />\r\n                             </p>\r\n                         </Fragment>\r\n                     ) : (\r\n"
+                },
+                {
+                    "date": 1635149402929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n                     editing ? (\r\n                         <Fragment>\r\n                             <p>\r\n                                 <input\r\n+                                    name=\"name\"\r\n                                     onChange={this.handleChange}\r\n                                     value={this.state.name}\r\n                                 />\r\n                             </p>\r\n"
+                },
+                {
+                    "date": 1635149422778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n                                 />\r\n                             </p>\r\n                             <p>\r\n                                 <input\r\n+                                    name=\"phone\"\r\n                                     onChange={this.handleChange}\r\n                                     value={this.state.phone}\r\n                                 />\r\n                             </p>\r\n"
+                },
+                {
+                    "date": 1635149460969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n     handleChange = (e) => {\r\n         this.setState({\r\n             [e.target.name]: e.target.value\r\n-        })\r\n+        });\r\n     }\r\n \r\n     render() {\r\n         const { name, phone } = this.props.info;\r\n"
+                },
+                {
+                    "date": 1635149489480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n         phone: ''\r\n     }\r\n \r\n     handleToggleEdit = () => {\r\n+        // true -> false\r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149510277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n     }\r\n \r\n     handleToggleEdit = () => {\r\n         // true -> false\r\n+            // onUpdate\r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149523460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \r\n     handleToggleEdit = () => {\r\n         // true -> false\r\n             // onUpdate\r\n+        // false -> true\r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149558366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     handleToggleEdit = () => {\r\n         // true -> false\r\n             // onUpdate\r\n         // false -> true\r\n+            // state 에 info 값들 넣어주기\r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149609681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n         // true -> false\r\n             // onUpdate\r\n         // false -> true\r\n             // state 에 info 값들 넣어주기\r\n+        const { info, onUpdate } = this.props;\r\n+\r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1635149652607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n             // onUpdate\r\n         // false -> true\r\n             // state 에 info 값들 넣어주기\r\n         const { info, onUpdate } = this.props;\r\n+        if (this.state.editing) {\r\n+            onUpdate()\r\n+        }\r\n \r\n         this.setState({\r\n             editing: !this.state.editing,\r\n         });\r\n"
+                },
+                {
+                    "date": 1635149689802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n         // false -> true\r\n             // state 에 info 값들 넣어주기\r\n         const { info, onUpdate } = this.props;\r\n         if (this.state.editing) {\r\n-            onUpdate()\r\n+            onUpdate(info.id, {\r\n+                name: this.state.name,\r\n+            })\r\n         }\r\n \r\n         this.setState({\r\n             editing: !this.state.editing,\r\n"
+                },
+                {
+                    "date": 1635149703147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         const { info, onUpdate } = this.props;\r\n         if (this.state.editing) {\r\n             onUpdate(info.id, {\r\n                 name: this.state.name,\r\n+                phone: this.state.phone\r\n             })\r\n         }\r\n \r\n         this.setState({\r\n"
+                },
+                {
+                    "date": 1635149711099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         if (this.state.editing) {\r\n             onUpdate(info.id, {\r\n                 name: this.state.name,\r\n                 phone: this.state.phone\r\n-            })\r\n+            });\r\n         }\r\n \r\n         this.setState({\r\n             editing: !this.state.editing,\r\n"
+                },
+                {
+                    "date": 1635149764982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,20 @@\n         // false -> true\r\n             // state 에 info 값들 넣어주기\r\n         const { info, onUpdate } = this.props;\r\n         if (this.state.editing) {\r\n+            // true -> false\r\n+                // onUpdate\r\n             onUpdate(info.id, {\r\n                 name: this.state.name,\r\n                 phone: this.state.phone\r\n             });\r\n+        } else {\r\n+            // false -> true\r\n+                // state 에 info 값들 넣어주기\r\n+            this.setState({\r\n+\r\n+            });\r\n         }\r\n \r\n         this.setState({\r\n             editing: !this.state.editing,\r\n"
+                },
+                {
+                    "date": 1635149784982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n         } else {\r\n             // false -> true\r\n                 // state 에 info 값들 넣어주기\r\n             this.setState({\r\n-\r\n+                name: info.name,\r\n+                phone: info.phone\r\n             });\r\n         }\r\n \r\n         this.setState({\r\n"
+                },
+                {
+                    "date": 1635150750117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,10 @@\n             padding: '8px 12px',\r\n             margin: '10px',\r\n         };\r\n \r\n+        console.log(name);\r\n+\r\n         return (\r\n             <div style={style}>\r\n                 {/* <p><b>{name}</b>&nbsp;\r\n                 <span>{phone}</span></p> */}\r\n"
+                },
+                {
+                    "date": 1635150956845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,15 @@\n         name: '',\r\n         phone: ''\r\n     }\r\n \r\n+    shouldComponentUpdate(nextProps, nextState) {\r\n+        if (this.state !== nextState) {\r\n+            return true;\r\n+        }\r\n+    }\r\n+    \r\n+\r\n     handleToggleEdit = () => {\r\n         // true -> false\r\n             // onUpdate\r\n         // false -> true\r\n"
+                },
+                {
+                    "date": 1635150985112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     shouldComponentUpdate(nextProps, nextState) {\r\n         if (this.state !== nextState) {\r\n             return true;\r\n         }\r\n+        return this.props.info !== nextProps\r\n     }\r\n     \r\n \r\n     handleToggleEdit = () => {\r\n"
+                },
+                {
+                    "date": 1635150990280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     shouldComponentUpdate(nextProps, nextState) {\r\n         if (this.state !== nextState) {\r\n             return true;\r\n         }\r\n-        return this.props.info !== nextProps\r\n+        return this.props.info !== nextProps.info;\r\n     }\r\n     \r\n \r\n     handleToggleEdit = () => {\r\n"
+                }
+            ],
+            "date": 1634889796245,
+            "name": "Commit-0",
+            "content": "import React, { Component } from 'react';\r\n\r\nclass PhoneInfo extends Component {\r\n    render() {\r\n        const { name, phone, id } = this.props.info;\r\n        \r\n        return (\r\n            <div>\r\n                \r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default PhoneInfo;"
+        }
+    ]
+}

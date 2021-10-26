@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/components/PhoneInfoList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1634890085799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634890112337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n class PhoneInfoList extends Component {\r\n     render() {\r\n         const { data } = this.props;\r\n         const list = data.map(\r\n-            info => (<PhoneInfo info={info} />)\r\n+            info => (<PhoneInfo info={info} key={info.id} />)\r\n         );\r\n \r\n         return (\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1634890131440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         );\r\n \r\n         return (\r\n             <div>\r\n-                \r\n+                {list}\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1634890225151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n \r\n class PhoneInfoList extends Component {\r\n     render() {\r\n         const { data } = this.props;\r\n+\r\n+        if (!data) return null;\r\n+\r\n         const list = data.map(\r\n             info => (<PhoneInfo info={info} key={info.id} />)\r\n         );\r\n \r\n"
+                },
+                {
+                    "date": 1634890276395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n import React, { Component } from 'react';\r\n import PhoneInfo from './PhoneInfo';\r\n \r\n class PhoneInfoList extends Component {\r\n+    static defaultProps = {\r\n+        data: []\r\n+    }\r\n+\r\n     render() {\r\n         const { data } = this.props;\r\n \r\n-        if (!data) return null;\r\n+        // if (!data) return null;\r\n \r\n         const list = data.map(\r\n             info => (<PhoneInfo info={info} key={info.id} />)\r\n         );\r\n"
+                },
+                {
+                    "date": 1634893780097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n         data: []\r\n     }\r\n \r\n     render() {\r\n-        const { data } = this.props;\r\n+        const { data, onRemove } = this.props;\r\n \r\n         // if (!data) return null;\r\n \r\n         const list = data.map(\r\n-            info => (<PhoneInfo info={info} key={info.id} />)\r\n+            info => (<PhoneInfo onRemove={onRemove} info={info} key={info.id} />)\r\n         );\r\n \r\n         return (\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1634893797686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,13 @@\n \r\n         // if (!data) return null;\r\n \r\n         const list = data.map(\r\n-            info => (<PhoneInfo onRemove={onRemove} info={info} key={info.id} />)\r\n+            info => (<PhoneInfo\r\n+                    onRemove={onRemove}\r\n+                    info={info}\r\n+                    key={info.id}\r\n+                />)\r\n         );\r\n \r\n         return (\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1634893820735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,15 @@\n \r\n         // if (!data) return null;\r\n \r\n         const list = data.map(\r\n-            info => (<PhoneInfo\r\n+            info => (\r\n+                <PhoneInfo\r\n                     onRemove={onRemove}\r\n                     info={info}\r\n                     key={info.id}\r\n-                />)\r\n+                />\r\n+            )\r\n         );\r\n \r\n         return (\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1635148112717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         data: []\r\n     }\r\n \r\n     render() {\r\n-        const { data, onRemove } = this.props;\r\n+        const { data, onRemove, onUpdate } = this.props;\r\n \r\n         // if (!data) return null;\r\n \r\n         const list = data.map(\r\n"
+                },
+                {
+                    "date": 1635148127735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n         const list = data.map(\r\n             info => (\r\n                 <PhoneInfo\r\n                     onRemove={onRemove}\r\n+                    onUpdate={onUpdate}\r\n                     info={info}\r\n                     key={info.id}\r\n                 />\r\n             )\r\n"
+                },
+                {
+                    "date": 1635150785532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n \r\n     render() {\r\n         const { data, onRemove, onUpdate } = this.props;\r\n \r\n+        console.log('rendering list');\r\n+\r\n         // if (!data) return null;\r\n \r\n         const list = data.map(\r\n             info => (\r\n"
+                }
+            ],
+            "date": 1634890085799,
+            "name": "Commit-0",
+            "content": "import React, { Component } from 'react';\r\nimport PhoneInfo from './PhoneInfo';\r\n\r\nclass PhoneInfoList extends Component {\r\n    render() {\r\n        const { data } = this.props;\r\n        const list = data.map(\r\n            info => (<PhoneInfo info={info} />)\r\n        );\r\n\r\n        return (\r\n            <div>\r\n                \r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default PhoneInfoList;"
+        }
+    ]
+}

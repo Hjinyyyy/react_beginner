@@ -1,0 +1,146 @@
+{
+    "sourceFile": "src/components/PhoneForm.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1634884621703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634887254687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n class PhoneForm extends Component {\r\n     render() {\r\n         return (\r\n             <div>\r\n-                PhoneForm\r\n+                <form>\r\n+\r\n+                </form>\r\n             </div>\r\n         );\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1634887270667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-\r\n+                    <input />\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1634887423118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,17 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneForm extends Component {\r\n+\r\n+    state = {\r\n+        name: '',        \r\n+    }\r\n+\r\n+    handleChange = (e) => {\r\n+        this.setState({\r\n+            name: e.target.value\r\n+        });\r\n+    }\r\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n"
+                },
+                {
+                    "date": 1634887458227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-                    <input />\r\n+                    <input onChange={this.handleChange}/>\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1634887491363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-                    <input onChange={this.handleChange}/>\r\n+                    <input onChange={this.handleChange} value={this.state.name}/>\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1634887512396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n         return (\r\n             <div>\r\n                 <form>\r\n                     <input onChange={this.handleChange} value={this.state.name}/>\r\n+                    {this.state.name}\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1634887572814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-                    <input onChange={this.handleChange} value={this.state.name}/>\r\n+                    <input placeholder=\"이름\" onChange={this.handleChange} value={this.state.name}/>\r\n+                    <input />\r\n                     {this.state.name}\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634887584084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n         return (\r\n             <div>\r\n                 <form>\r\n                     <input placeholder=\"이름\" onChange={this.handleChange} value={this.state.name}/>\r\n-                    <input />\r\n+                    <input placeholder=\"전화번호\" />\r\n                     {this.state.name}\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634887661182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \r\n class PhoneForm extends Component {\r\n \r\n     state = {\r\n-        name: '',        \r\n+        name: '',\r\n+        phone: '',     \r\n     }\r\n \r\n     handleChange = (e) => {\r\n         this.setState({\r\n@@ -14,10 +15,10 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-                    <input placeholder=\"이름\" onChange={this.handleChange} value={this.state.name}/>\r\n-                    <input placeholder=\"전화번호\" />\r\n+                    <input placeholder=\"이름\" onChange={this.handleChange} value={this.state.name} />\r\n+                    <input placeholder=\"전화번호\" value={this.state.phone} />\r\n                     {this.state.name}\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634887770856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,19 @@\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n-                    <input placeholder=\"이름\" onChange={this.handleChange} value={this.state.name} />\r\n-                    <input placeholder=\"전화번호\" value={this.state.phone} />\r\n+                    <input\r\n+                        name=\"name\" \r\n+                        placeholder=\"이름\"\r\n+                        onChange={this.handleChange}\r\n+                        value={this.state.name}\r\n+                    />\r\n+                    <input\r\n+                        name=\"phone\"\r\n+                        placeholder=\"전화번호\"\r\n+                        value={this.state.phone}\r\n+                    />\r\n                     {this.state.name}\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634887846529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n                     />\r\n                     <input\r\n                         name=\"phone\"\r\n                         placeholder=\"전화번호\"\r\n+                        onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n                     {this.state.name}\r\n                 </form>\r\n"
+                },
+                {
+                    "date": 1634887904616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     }\r\n \r\n     handleChange = (e) => {\r\n         this.setState({\r\n-            name: e.target.value\r\n+            [e.target.name]: e.target.value\r\n         });\r\n     }\r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1634887959150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,11 @@\n                         placeholder=\"전화번호\"\r\n                         onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n-                    {this.state.name}\r\n+                    <div>\r\n+                        {this.state.name}\r\n+                    </div>\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1634887970967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n                         value={this.state.phone}\r\n                     />\r\n                     <div>\r\n                         {this.state.name}\r\n+                        {this.state.phone}\r\n                     </div>\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634888001098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,9 @@\n                         onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n                     <div>\r\n-                        {this.state.name}\r\n-                        {this.state.phone}\r\n+                        {this.state.name} {this.state.phone}\r\n                     </div>\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634888009349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                         onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n                     <div>\r\n-                        {this.state.name} {this.state.phone}\r\n+                        {this.state.name}&nbsp;{this.state.phone}\r\n                     </div>\r\n                 </form>\r\n             </div>\r\n         );\r\n"
+                },
+                {
+                    "date": 1634888519289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n                         placeholder=\"전화번호\"\r\n                         onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n+                    <button type=\"submit\">등록</button>\r\n                     <div>\r\n                         {this.state.name}&nbsp;{this.state.phone}\r\n                     </div>\r\n                 </form>\r\n"
+                },
+                {
+                    "date": 1634888593381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,13 @@\n         this.setState({\r\n             [e.target.name]: e.target.value\r\n         });\r\n     }\r\n+\r\n+    handleSubmit = (e) => {\r\n+        e.preventDefault();\r\n+    }\r\n+\r\n     render() {\r\n         return (\r\n             <div>\r\n                 <form>\r\n"
+                },
+                {
+                    "date": 1634888642396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n     render() {\r\n         return (\r\n             <div>\r\n-                <form>\r\n+                <form onSubmit={this.handleSubmit}>\r\n                     <input\r\n                         name=\"name\" \r\n                         placeholder=\"이름\"\r\n                         onChange={this.handleChange}\r\n"
+                },
+                {
+                    "date": 1634888706206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,12 @@\n     }\r\n \r\n     handleSubmit = (e) => {\r\n         e.preventDefault();\r\n+        this.props.onCreate({\r\n+            name: this.state.name,\r\n+            phone: this.state.phone\r\n+        });\r\n     }\r\n \r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1634888711483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     handleSubmit = (e) => {\r\n         e.preventDefault();\r\n         this.props.onCreate({\r\n             name: this.state.name,\r\n-            phone: this.state.phone\r\n+            phone: this.state.phone,\r\n         });\r\n     }\r\n \r\n     render() {\r\n"
+                },
+                {
+                    "date": 1634888738986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,13 @@\n     }\r\n \r\n     handleSubmit = (e) => {\r\n         e.preventDefault();\r\n-        this.props.onCreate({\r\n-            name: this.state.name,\r\n-            phone: this.state.phone,\r\n-        });\r\n+        // this.props.onCreate({\r\n+        //     name: this.state.name,\r\n+        //     phone: this.state.phone,\r\n+        // });\r\n+        this.props.onCreate(this.state);\r\n     }\r\n \r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1634889132600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,12 @@\n         //     name: this.state.name,\r\n         //     phone: this.state.phone,\r\n         // });\r\n         this.props.onCreate(this.state);\r\n+        this.setState({\r\n+            name: '',\r\n+            phone: '',\r\n+        });\r\n     }\r\n \r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1634889166186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,11 +42,11 @@\n                         onChange={this.handleChange}\r\n                         value={this.state.phone}\r\n                     />\r\n                     <button type=\"submit\">등록</button>\r\n-                    <div>\r\n+                    {/* <div>\r\n                         {this.state.name}&nbsp;{this.state.phone}\r\n-                    </div>\r\n+                    </div> */}\r\n                 </form>\r\n             </div>\r\n         );\r\n     }\r\n"
+                },
+                {
+                    "date": 1635153880720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneForm extends Component {\r\n-\r\n+    input = null\r\n+    \r\n     state = {\r\n         name: '',\r\n         phone: '',     \r\n     }\r\n"
+                },
+                {
+                    "date": 1635153931707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneForm extends Component {\r\n     input = null\r\n-    \r\n+\r\n     state = {\r\n         name: '',\r\n         phone: '',     \r\n     }\r\n@@ -35,8 +35,9 @@\n                         name=\"name\" \r\n                         placeholder=\"이름\"\r\n                         onChange={this.handleChange}\r\n                         value={this.state.name}\r\n+                        ref={ref => this.input = ref}\r\n                     />\r\n                     <input\r\n                         name=\"phone\"\r\n                         placeholder=\"전화번호\"\r\n"
+                },
+                {
+                    "date": 1635153984463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n         this.setState({\r\n             name: '',\r\n             phone: '',\r\n         });\r\n+        this.input.focus();\r\n     }\r\n \r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1635154046539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React, { Component } from 'react';\r\n \r\n class PhoneForm extends Component {\r\n-    input = null\r\n-\r\n+    // input = null\r\n+    input = React.createRef();\r\n+    \r\n     state = {\r\n         name: '',\r\n         phone: '',     \r\n     }\r\n"
+                },
+                {
+                    "date": 1635154071338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,10 @@\n                         name=\"name\" \r\n                         placeholder=\"이름\"\r\n                         onChange={this.handleChange}\r\n                         value={this.state.name}\r\n-                        ref={ref => this.input = ref}\r\n+                        // ref={ref => this.input = ref}\r\n+                        ref={this.input}\r\n                     />\r\n                     <input\r\n                         name=\"phone\"\r\n                         placeholder=\"전화번호\"\r\n"
+                },
+                {
+                    "date": 1635154093499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n         this.setState({\r\n             name: '',\r\n             phone: '',\r\n         });\r\n-        this.input.focus();\r\n+        // this.input.focus();\r\n+        this.input.current.focus();\r\n     }\r\n \r\n     render() {\r\n         return (\r\n"
+                },
+                {
+                    "date": 1635222802330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,61 @@\n+import React, { Component } from 'react';\r\n+\r\n+class PhoneForm extends Component {\r\n+    // input = null\r\n+    input = React.createRef();\r\n+    \r\n+    state = {\r\n+        name: '',\r\n+        phone: '',     \r\n+    }\r\n+\r\n+    handleChange = (e) => {\r\n+        this.setState({\r\n+            [e.target.name]: e.target.value\r\n+        });\r\n+    }\r\n+\r\n+    handleSubmit = (e) => {\r\n+        e.preventDefault();\r\n+        // this.props.onCreate({\r\n+        //     name: this.state.name,\r\n+        //     phone: this.state.phone,\r\n+        // });\r\n+        this.props.onCreate(this.state);\r\n+        this.setState({\r\n+            name: '',\r\n+            phone: '',\r\n+        });\r\n+        // this.input.focus();\r\n+        this.input.current.focus();\r\n+    }\r\n+\r\n+    render() {\r\n+        return (\r\n+            <div>\r\n+                <form onSubmit={this.handleSubmit}>\r\n+                    <input\r\n+                        name=\"name\" \r\n+                        placeholder=\"이름\"\r\n+                        onChange={this.handleChange}\r\n+                        value={this.state.name}\r\n+                        // ref={ref => this.input = ref}\r\n+                        ref={this.input}\r\n+                    />\r\n+                    <input\r\n+                        name=\"phone\"\r\n+                        placeholder=\"전화번호\"\r\n+                        onChange={this.handleChange}\r\n+                        value={this.state.phone}\r\n+                    />\r\n+                    <button type=\"submit\">등록</button>\r\n+                    {/* <div>\r\n+                        {this.state.name}&nbsp;{this.state.phone}\r\n+                    </div> */}\r\n+                </form>\r\n+            </div>\r\n+        );\r\n+    }\r\n+}\r\n+\r\n+export default PhoneForm;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635223272854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,66 +57,5 @@\n         );\r\n     }\r\n }\r\n \r\n-export default PhoneForm;\n-import React, { Component } from 'react';\r\n-\r\n-class PhoneForm extends Component {\r\n-    // input = null\r\n-    input = React.createRef();\r\n-    \r\n-    state = {\r\n-        name: '',\r\n-        phone: '',     \r\n-    }\r\n-\r\n-    handleChange = (e) => {\r\n-        this.setState({\r\n-            [e.target.name]: e.target.value\r\n-        });\r\n-    }\r\n-\r\n-    handleSubmit = (e) => {\r\n-        e.preventDefault();\r\n-        // this.props.onCreate({\r\n-        //     name: this.state.name,\r\n-        //     phone: this.state.phone,\r\n-        // });\r\n-        this.props.onCreate(this.state);\r\n-        this.setState({\r\n-            name: '',\r\n-            phone: '',\r\n-        });\r\n-        // this.input.focus();\r\n-        this.input.current.focus();\r\n-    }\r\n-\r\n-    render() {\r\n-        return (\r\n-            <div>\r\n-                <form onSubmit={this.handleSubmit}>\r\n-                    <input\r\n-                        name=\"name\" \r\n-                        placeholder=\"이름\"\r\n-                        onChange={this.handleChange}\r\n-                        value={this.state.name}\r\n-                        // ref={ref => this.input = ref}\r\n-                        ref={this.input}\r\n-                    />\r\n-                    <input\r\n-                        name=\"phone\"\r\n-                        placeholder=\"전화번호\"\r\n-                        onChange={this.handleChange}\r\n-                        value={this.state.phone}\r\n-                    />\r\n-                    <button type=\"submit\">등록</button>\r\n-                    {/* <div>\r\n-                        {this.state.name}&nbsp;{this.state.phone}\r\n-                    </div> */}\r\n-                </form>\r\n-            </div>\r\n-        );\r\n-    }\r\n-}\r\n-\r\n export default PhoneForm;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1634884621703,
+            "name": "Commit-0",
+            "content": "import React, { Component } from 'react';\r\n\r\nclass PhoneForm extends Component {\r\n    render() {\r\n        return (\r\n            <div>\r\n                PhoneForm\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default PhoneForm;"
+        }
+    ]
+}
