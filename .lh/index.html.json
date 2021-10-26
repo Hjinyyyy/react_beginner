@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1635225730644,
@@ -24,6 +24,14 @@
                 {
                     "date": 1635226014504,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n <!-- PAGE CSS -->\r\n <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\r\n <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap\" rel=\"stylesheet\">\r\n <link href=\"/css/reset.css\" rel=\"stylesheet\">\r\n+<link href=\"/css/default.css\" rel=\"stylesheet\">\r\n \r\n <!-- JS -->\r\n </head>\r\n <body>\r\n"
+                },
+                {
+                    "date": 1635227828413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n \r\n <!-- PAGE CSS -->\r\n <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\r\n <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap\" rel=\"stylesheet\">\r\n-<link href=\"/css/reset.css\" rel=\"stylesheet\">\r\n-<link href=\"/css/default.css\" rel=\"stylesheet\">\r\n+<link href=\"./css/reset.css\" rel=\"stylesheet\">\r\n+<link href=\"./css/default.css\" rel=\"stylesheet\">\r\n \r\n <!-- JS -->\r\n </head>\r\n <body>\r\n"
+                },
+                {
+                    "date": 1635227925903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n \r\n <!-- PAGE CSS -->\r\n <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\r\n <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap\" rel=\"stylesheet\">\r\n-<link href=\"./css/reset.css\" rel=\"stylesheet\">\r\n-<link href=\"./css/default.css\" rel=\"stylesheet\">\r\n+<link href=\"../css/reset.css\" rel=\"stylesheet\">\r\n+<link href=\"../css/default.css\" rel=\"stylesheet\">\r\n \r\n <!-- JS -->\r\n </head>\r\n <body>\r\n"
                 }
             ],
             "date": 1635225730644,
