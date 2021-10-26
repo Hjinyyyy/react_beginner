@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1635225730644,
@@ -44,6 +44,18 @@
                 {
                     "date": 1635228936124,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n     <h2>React & javascript ES6 in inflearn</h2>\r\n     <ul>\r\n         <li>\r\n             <a href=\"https://hjinyyyy.github.io/react_beginner/contact-app\">contact-app</a>\r\n-            <span>-</span>\r\n+            <span>&nbsp;-&nbsp;</span>\r\n             <a href=\"https://react-anyone.vlpt.us/\">참고</a>\r\n         </li>\r\n     </ul>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1635231303419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     <ul>\r\n         <li>\r\n             <a href=\"https://hjinyyyy.github.io/react_beginner/contact-app\">contact-app</a>\r\n             <span>&nbsp;-&nbsp;</span>\r\n-            <a href=\"https://react-anyone.vlpt.us/\">참고</a>\r\n+            <a href=\"https://react-anyone.vlpt.us/\">참고1</a>\r\n         </li>\r\n     </ul>\r\n </div>\r\n </body>\r\n"
+                },
+                {
+                    "date": 1635231338078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,10 @@\n         <li>\r\n             <a href=\"https://hjinyyyy.github.io/react_beginner/contact-app\">contact-app</a>\r\n             <span>&nbsp;-&nbsp;</span>\r\n             <a href=\"https://react-anyone.vlpt.us/\">참고1</a>\r\n+            <span>,&nbsp;</span>\r\n+            <a href=\"https://react-anyone.vlpt.us/\">참고2</a>\r\n         </li>\r\n     </ul>\r\n </div>\r\n </body>\r\n"
+                },
+                {
+                    "date": 1635231358821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n             <a href=\"https://hjinyyyy.github.io/react_beginner/contact-app\">contact-app</a>\r\n             <span>&nbsp;-&nbsp;</span>\r\n             <a href=\"https://react-anyone.vlpt.us/\">참고1</a>\r\n             <span>,&nbsp;</span>\r\n-            <a href=\"https://react-anyone.vlpt.us/\">참고2</a>\r\n+            <a href=\"https://velopert.com/reactjs-tutorials\">참고2</a>\r\n         </li>\r\n     </ul>\r\n </div>\r\n </body>\r\n"
                 }
             ],
             "date": 1635225730644,
